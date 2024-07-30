@@ -1,0 +1,214 @@
+@tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  @layer base {
+    :root {
+      --background: 0 0% 100%;
+      --foreground: 222.2 84% 4.9%;
+
+      --card: 0 0% 100%;
+      --card-foreground: 222.2 84% 4.9%;
+
+      --popover: 0 0% 100%;
+      --popover-foreground: 222.2 84% 4.9%;
+
+      --primary: 222.2 47.4% 11.2%;
+      --primary-foreground: 210 40% 98%;
+
+      --secondary: 210 40% 96.1%;
+      --secondary-foreground: 222.2 47.4% 11.2%;
+
+      --muted: 210 40% 96.1%;
+      --muted-foreground: 215.4 16.3% 46.9%;
+
+      --accent: 210 40% 96.1%;
+      --accent-foreground: 222.2 47.4% 11.2%;
+
+      --destructive: 0 84.2% 60.2%;
+      --destructive-foreground: 210 40% 98%;
+
+      --border: 214.3 31.8% 91.4%;
+      --input: 214.3 31.8% 91.4%;
+      --ring: 222.2 84% 4.9%;
+
+      --radius: 0.5rem;
+    }
+
+    .dark {
+      --background: 222.2 84% 4.9%;
+      --foreground: 210 40% 98%;
+
+      --card: 222.2 84% 4.9%;
+      --card-foreground: 210 40% 98%;
+
+      --popover: 222.2 84% 4.9%;
+      --popover-foreground: 210 40% 98%;
+
+      --primary: 210 40% 98%;
+      --primary-foreground: 222.2 47.4% 11.2%;
+
+      --secondary: 217.2 32.6% 17.5%;
+      --secondary-foreground: 210 40% 98%;
+
+      --muted: 217.2 32.6% 17.5%;
+      --muted-foreground: 215 20.2% 65.1%;
+
+      --accent: 217.2 32.6% 17.5%;
+      --accent-foreground: 210 40% 98%;
+
+      --destructive: 0 62.8% 30.6%;
+      --destructive-foreground: 210 40% 98%;
+
+      --border: 217.2 32.6% 17.5%;
+      --input: 217.2 32.6% 17.5%;
+      --ring: 212.7 26.8% 83.9%;
+    }
+  }
+
+  @layer base {
+    * {
+      @apply border-border;
+    }
+    body {
+      @apply bg-background text-foreground;
+    }
+  }
+  
+
+  .container {
+    display: flex;
+  }
+  
+  .sidebar {
+    width: 250px;
+    padding: 20px;
+  }
+  
+  .sidebar h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    margin: 10px 0;
+  }
+  
+  .sidebar ul li a {
+    text-decoration: none;
+    color: #000;
+    transition: color 0.2s;
+  }
+  
+  .sidebar ul li a:hover {
+    color: #6366f1;
+  }
+  
+  .content {
+    flex: 1;
+    padding: 16px;
+  }
+  
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 8px;
+    position: relative; /* Ensure relative positioning for absolute children */
+    display: inline-block;
+    vertical-align: top;
+    width: calc(33% - 32px); /* Three cards per row */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .normal-card .green-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #2ecc71; /* Green color */
+  }
+  
+  .card h4 {
+    margin: 0 0 8px;
+    font-size: 1.2em;
+  }
+  
+  .card .value {
+    font-size: 1.3em;
+    font-weight: bold;
+  }
+  
+  .card .status {
+    font-weight: bold;
+  }
+  
+  .card .status.optimal {
+    color: green;
+  }
+  
+  .card .status.outside-optimal {
+    color: orange;
+  }
+  
+  .card .status.abnormal {
+    color: red;
+  }
+
+
+
+  header {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8));
+  }
+  
+  header h1 {
+    color: #1f2937;
+  }
+  
+  header a {
+    display: flex;
+    align-items: center;
+    color: #2563eb;
+  }
+  
+  header a:hover {
+    text-decoration: underline;
+  }
+  
+  .semicircle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .semicircle-progress-bar {
+    width: 200px;
+    height: 100px;
+    position: relative;
+  }
+  .semicircle-progress-bar .background {
+    fill: #d6d6d6;
+  }
+  .semicircle-progress-bar .progress {
+    fill: #3e98c7;
+  }
+  .semicircle-progress-bar .text {
+    font-size: 1.5em;
+    font-weight: bold;
+    fill: #000;
+    text-anchor: middle;
+  }
+  
+/* Add this CSS to your styles */
+.grid-background {
+  background-image: linear-gradient(to right, rgba(221, 221, 221, 0.5) 1px, transparent 1px), 
+                    linear-gradient(to bottom, rgba(221, 221, 221, 0.5) 1px, transparent 1px);
+  background-size: 200px 200px; /* Make the grid squares larger */
+}
